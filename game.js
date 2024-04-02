@@ -50,7 +50,6 @@ let xPos = 10;
 let yPos = 150;
 let grav = 1;
 
-isRunning = false;
 function draw(isRunning) {
 
  ctx.drawImage(bg, 0, 0);
@@ -59,7 +58,7 @@ function draw(isRunning) {
  ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
  ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
- pipe[i].x = pipe[i].x - 1;
+ pipe[i].x = pipe[i].x - 1.5;
 
  if(pipe[i].x == 10) {
  pipe.push({
