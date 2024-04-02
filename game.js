@@ -59,7 +59,7 @@ function draw(isRunning) {
  ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
  ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
- pipe[i].x = pipe[i].x - 0.5;
+ pipe[i].x = pipe[i].x - 1;
 
  if(pipe[i].x == 10) {
  pipe.push({
@@ -99,6 +99,7 @@ function draw(isRunning) {
  if (isRunning) {
     requestAnimationFrame(draw);
  } else {
+    fail.volume = 0.5;
     fail.play(); 
     setTimeout(() => {
         location.reload();
