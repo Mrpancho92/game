@@ -48,7 +48,7 @@ var score = 0;
 // Позиция птички
 var xPos = 10;
 var yPos = 150;
-var grav = 0.8;
+var grav = 1.5;
 
 isRunning = false;
 function draw(isRunning) {
