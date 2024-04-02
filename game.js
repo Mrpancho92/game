@@ -58,7 +58,7 @@ function draw(isRunning) {
  ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
  ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
- pipe[i].x = pipe[i].x - 2;
+ pipe[i].x = pipe[i].x - 0.5;
 
  if(pipe[i].x == 10) {
  pipe.push({
