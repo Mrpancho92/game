@@ -1,12 +1,12 @@
-var cvs = document.getElementById("canvas");
-var ctx = cvs.getContext("2d");
+let cvs = document.getElementById("canvas");
+let ctx = cvs.getContext("2d");
 const button = document.querySelector(".start");
 
-var bird = new Image();
-var bg = new Image();
-var fg = new Image();
-var pipeUp = new Image();
-var pipeBottom = new Image();
+let bird = new Image();
+let bg = new Image();
+let fg = new Image();
+let pipeUp = new Image();
+let pipeBottom = new Image();
 
 bird.src = "img/pasha/bird.png";
 bg.src = "img/bg.png";
@@ -15,17 +15,17 @@ pipeUp.src = "img/pipeUp.png";
 pipeBottom.src = "img/pipeBottom.png";
 
 // Звуковые файлы
-var fly = new Audio();
-var score_audio = new Audio();
-var score_audio_gaz = new Audio();
-var fail = new Audio();
+let fly = new Audio();
+let score_audio = new Audio();
+let score_audio_gaz = new Audio();
+let fail = new Audio();
 
 fly.src = "audio/pasha/fly.m4a";
 score_audio.src = "audio/pasha/score.m4a";
 score_audio_gaz.src = "audio/pasha/gaz.m4a";
 fail.src = "audio/pasha/fail.m4a";
-fail.volume = 0.5;
-var gap = 120;
+
+let gap = 120;
 
 // При нажатии на какую-либо кнопку
 
@@ -37,25 +37,25 @@ function moveUp() {
 }
 
 // Создание блоков
-var pipe = [];
+let pipe = [];
 
 pipe[0] = {
  x : cvs.width,
  y : 0
 }
 
-var score = 0;
+let score = 0;
 // Позиция птички
-var xPos = 10;
-var yPos = 150;
-var grav = 1;
+let xPos = 10;
+let yPos = 150;
+let grav = 1;
 
 isRunning = false;
 function draw(isRunning) {
 
  ctx.drawImage(bg, 0, 0);
 
- for(var i = 0; i < pipe.length; i++) {
+ for(let i = 0; i < pipe.length; i++) {
  ctx.drawImage(pipeUp, pipe[i].x, pipe[i].y);
  ctx.drawImage(pipeBottom, pipe[i].x, pipe[i].y + pipeUp.height + gap);
 
@@ -99,6 +99,7 @@ function draw(isRunning) {
  if (isRunning) {
     requestAnimationFrame(draw);
  } else {
+    fail.volume = 0.5;
     fail.play(); 
     setTimeout(() => {
         location.reload();
