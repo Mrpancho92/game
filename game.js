@@ -90,7 +90,7 @@ function draw(isRunning) {
  ctx.drawImage(fg, 0, cvs.height - fg.height);
  ctx.drawImage(bird, xPos, yPos);
 
- yPos += grav*2;
+ yPos += grav*1.5;
 
  ctx.fillStyle = "#000";
  ctx.font = "24px Verdana";
