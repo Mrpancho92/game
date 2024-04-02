@@ -24,7 +24,7 @@ fly.src = "audio/pasha/fly.m4a";
 score_audio.src = "audio/pasha/score.m4a";
 score_audio_gaz.src = "audio/pasha/gaz.m4a";
 fail.src = "audio/pasha/fail.m4a";
-
+fail.volume = 0.1;
 var gap = 120;
 
 // При нажатии на какую-либо кнопку
@@ -99,7 +99,6 @@ function draw(isRunning) {
  if (isRunning) {
     requestAnimationFrame(draw);
  } else {
-    fail.volume = 0.5;
     fail.play(); 
     setTimeout(() => {
         location.reload();
